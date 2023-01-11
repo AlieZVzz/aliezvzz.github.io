@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Stance detection on social media
+title: Stance detection on social media: State of the art and trends
 date: 2023-01-06
 Author: ALDayel
 categories: 
