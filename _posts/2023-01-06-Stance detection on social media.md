@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Stance
+title: Stance detection on social media
 date: 2023-01-06
 Author: ALDayel
 categories: 
