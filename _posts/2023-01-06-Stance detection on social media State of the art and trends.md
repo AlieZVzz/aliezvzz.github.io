@@ -4,7 +4,7 @@ title: Stance detection on social media State of the art and trends
 date: 2023-01-06
 Author: ALDayel
 categories: 
-tags: [sample, document]
+tags: [stance detection]
 comments: true
 --- 
 ### ALDayel, A., & Magdy, W. (2021). Stance detection on social media: State of the art and trends. Information Processing & Management, 58(4), 102597. https://doi.org/10.1016/j.ipm.2021.102597
