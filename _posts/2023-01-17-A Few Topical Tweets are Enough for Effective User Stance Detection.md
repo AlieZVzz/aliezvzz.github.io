@@ -1,15 +1,4 @@
 ---
-tags: []
-parent: ""
-collections:
-    - '2023 Review'
-version: 0
-libraryID: 1
-itemKey: K3ZR3PBC
-
----
-
----
 layout: post
 title: A Few Topical Tweets are Enough for Effective User Stance Detection
 date: 2023-01-17
