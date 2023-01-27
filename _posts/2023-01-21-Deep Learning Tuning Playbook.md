@@ -7,8 +7,9 @@ categories:
 tags: [deep learning]
 comments: true
 --- 
-# Deep Learning Tuning Playbook
-*Original link：https://github.com/google-research/tuning_playbook*
+*搬运至：https://github.com/google-research/tuning_playbook*
+
+
 *This is not an officially supported Google product.*
 
 **Varun Godbole<sup>&dagger;</sup>, George E. Dahl<sup>&dagger;</sup>, Justin Gilmer<sup>&dagger;</sup>, Christopher J. Shallue<sup>&Dagger;</sup>, Zachary Nado<sup>&dagger;</sup>**
