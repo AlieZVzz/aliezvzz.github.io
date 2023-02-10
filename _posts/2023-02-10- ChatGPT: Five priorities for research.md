@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ChatGPT: Five priorities for research
+title: ChatGPT Five priorities for research
 date: 2023-02-10
 Author: aliezvzz
 categories: 
