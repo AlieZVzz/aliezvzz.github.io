@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Human-Centric Research for NLP: Towards a Definition and Guiding Questions
+title: Human-Centric Research for NLP-Towards a Definition and Guiding Questions
 date: 2023-03-05
 Author: aliezvzz
 categories: 
