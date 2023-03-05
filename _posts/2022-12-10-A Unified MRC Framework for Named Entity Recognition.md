@@ -4,7 +4,7 @@ title: A Unified MRC Framework for Named Entity Recognition
 date: 2022-12-10
 Author: aliezvzz
 categories: 
-tags: 【technology advance]
+tags: [technology advance]
 comments: False
 --- 
 Li, X., Feng, J., Meng, Y., Han, Q., Wu, F., & Li, J. (2020). A Unified MRC Framework for Named Entity Recognition. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 5849–5859. https://doi.org/10.18653/v1/2020.acl-main.519
