@@ -19,9 +19,9 @@ $gray: #666;
 $lightGray: #eee;
 $white: #fff;
 
-// System font stacks avoid third-party font scripts and keep Chinese text stable.
-$ui-font: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-$base-font: ui-serif, "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, Georgia, serif;
+// 正文与界面统一使用系统中文黑体，避免宋体和外部 Web Font。
+$ui-font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", Arial, sans-serif;
+$base-font: $ui-font;
 $code-font: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
 // Font sizes
