@@ -1,84 +1,169 @@
-LOFFER是个可以帮助你get off from LOFTER的软件（我知道这个pun很烂）。
+# AlieZVzz Blog
 
-这是一个可以发布在GitHub的Jekyll博客，你不需要编写代码或使用命令行即可获得一个部署在GitHub的博客。
+这是我的个人博客，记录 AI、知识管理、自动化实践，以及独立产品的设计与开发过程。
 
-现在我将此文档和基础教程分开了，此文档用于说明LOFFER的现有功能和更新情况，**查看为无任何代码基础者写的教程[请点这里](https://fromendworld.github.io/LOFFER/document/)**
+访问网站：[https://aliezvzz.github.io](https://aliezvzz.github.io)
 
-## 更新内容
+## 内容方向
 
-### 2019-07-25 V0.4.0
+- AI、NLP 与 Human-centered AI
+- AI Agent 与个人工作流自动化
+- Notion、知识管理与数字化复盘
+- 独立产品的设计、开发和实践总结
 
-修订目录跳级会坏掉的问题，不算完美解决，但不会坏掉了。
+## 网站功能
 
-增加对LaTeX渲染的支持，请见[这篇说明和示例](https://fromendworld.github.io/LOFFER/math-test/)。
+- 使用 Markdown 编写文章
+- 响应式布局，适配桌面端和移动端
+- 支持标签、归档、分页和文章目录
+- 按文章启用 Mermaid 流程图
+- 按文章启用 MathJax 数学公式
+- 自动生成 RSS Feed、Sitemap 和 SEO 元数据
+- 支持通过 Utterances 使用 GitHub Issues 评论
 
-增加置顶功能，只要在一个post的YAML Front Matter（就是文章头部的这段信息）中加入` pinned: true `，这篇文章就可以置顶了。
+## 技术栈
 
-另外介绍一个给LOFFER更换主题颜色的手法。LOFFER用了一个开源的颜色表[Open Color](https://yeun.github.io/open-color/),该色表提供的可选颜色有：red, pink, grape, violet, indigo, blue, cyan, teal, green, lime, yellow。
+- [GitHub Pages](https://pages.github.com/)
+- [Jekyll](https://jekyllrb.com/) 与 `github-pages`
+- Liquid、Kramdown、Sass
+- [Mermaid](https://mermaid.js.org/)
+- [MathJax](https://www.mathjax.org/)
+- [Utterances](https://utteranc.es/)
 
-LOFFER的默认状态是teal，要更换主题颜色，只要打开文件` _sass/_variables.scss `，将文件中所有的teal全部替换成你想要的颜色。例如，查找teal，替换indigo，全部替换，commit，完成！
+网站基于 [LOFFER](https://github.com/FromEndWorld/LOFFER) 主题持续定制。
 
+## 项目结构
 
-### 2019-07-20 V0.3.0
+```text
+.
+├── _config.yml                  # 网站全局配置
+├── _includes/                   # 可复用页面组件
+├── _layouts/                    # 页面和文章布局
+├── _posts/                      # 博客文章
+├── _sass/                       # Sass 变量和组件样式
+├── archive/                     # 文章归档页
+├── attachments/                 # 文章附件
+├── images/                      # 图片、头像和站点图标
+├── tags/                        # 标签页
+├── .github/workflows/           # GitHub Actions 构建检查
+├── about.md                     # 关于页面
+├── Gemfile                      # Ruby 依赖
+└── style.scss                   # 站点样式入口
+```
 
-新版本增加目录功能，在post的信息中心加入` toc: true `，这篇博文就会显示目录了。
+## 本地运行
 
-这次没有对config的修改，因此应该可以通过[这个方法](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)，给自己提pull request来更新。
+推荐使用 Ruby 3.2，与 GitHub Actions 的构建环境保持一致。
 
-目录基于[jekyll-toc by allejo](https://github.com/allejo/jekyll-toc)制作。
+```bash
+bundle install
+bundle exec jekyll serve
+```
 
-目前我试用发现了一点小问题：如果你的标题级数不按套路变化，它就会搞不懂…… 
+然后访问 [http://127.0.0.1:4000](http://127.0.0.1:4000)。
 
-` # 一级标题 `下面必须是` ## 二级标题 `，如果是` ### 三级标题 `它就人工智障了【手动扶额】
+执行生产环境构建：
 
-注意：目前目录仅在桌面版显示。
+```bash
+JEKYLL_ENV=production bundle exec jekyll build
+```
 
+生成的网站位于 `_site/`。
 
-### 2019-06-30 V0.2.0
+## 发布文章
 
-新版本进一步优化了一下样式，并且支持了基于GitHub Issues的评论Gitalk（请看下文的配置说明）。
+在 `_posts/` 中创建名称符合以下格式的 Markdown 文件：
 
-如果你已经fork了LOFFER，想要更新到新版本的话，可以试试[这个方法](https://github.com/KirstieJane/STEMMRoleModels/wiki/Syncing-your-fork-to-the-original-repository-via-the-browser)，或者你也可以干脆删掉重来，只要保留自己的大部分config设定和所有的post就好。
+```text
+YYYY-MM-DD-slug.md
+```
 
-LOFFER只是容器，你的posts才是博客的核心。
+推荐使用下面的 Front Matter：
 
-## 支持的功能
+```yaml
+---
+layout: post
+title: "文章标题"
+date: 2026-07-30
+author: AlieZVzz
+description: "用于文章列表和搜索结果的简短介绍"
+tags: [AI Agent, Notion]
+comments: true
+toc: true
+mermaid: true
+math: false
+---
+```
 
-使用Markdown文档在_post文件夹中发布博文，现有功能包括显示作者、置顶博文、添加目录。
+配置说明：
 
-博文YAML举例：
+- `comments`：是否显示 Utterances 评论区
+- `toc`：是否生成文章目录
+- `mermaid`：是否加载 Mermaid 并渲染流程图
+- `math`：是否加载 MathJax 并渲染数学公式
 
-    ---
-    layout: post
-    title: Markdown语法简介
-    date: 2013-07-16
-    Author: Shengbin 
-    tags: [sample, markdown]
-    comments: true
-    toc: true
-    ---
+可以在正文中加入 `<!-- more -->`，控制首页文章摘要的截断位置。
 
-按照标签和日期查看博文归档。请查看/tags 和/archive 页面。
+### Mermaid
 
-链接博客主的社交媒体。请在_config.yml中填写。
+文章设置 `mermaid: true` 后，可以直接使用 Mermaid 代码块：
 
-支持Disqus和Gitalk两种评论区。请在_config.yml中设置。
+````markdown
+```mermaid
+flowchart LR
+    A[截图采集] --> B[内容分析]
+    B --> C[同步 Notion]
+```
+````
 
+### 数学公式
+
+文章设置 `math: true` 后，可以使用行内公式 `$E = mc^2$` 或块级公式：
+
+```text
+$$
+\nabla_\theta J(\theta)
+$$
+```
+
+## 评论配置
+
+评论系统使用 Utterances，相关配置位于 `_config.yml`：
+
+```yaml
+comments_provider: utterances
+utterances:
+  repo: AlieZVzz/aliezvzz.github.io
+  issue_term: pathname
+  label: blog-comments
+  theme: github-light
+```
+
+首次启用前，需要为仓库安装 [Utterances GitHub App](https://github.com/apps/utterances)。只有设置了 `comments: true` 的文章才会显示评论区。
+
+## 修改网站
+
+- 网站标题、描述、导航、分页和评论：修改 `_config.yml`
+- 字体、颜色和断点：修改 `_sass/_variables.scss`
+- 全局样式：修改 `style.scss` 和 `_sass/` 下的组件文件
+- 页面结构：修改 `_layouts/` 和 `_includes/`
+- 头像与图标：替换 `images/logo.png` 和 `images/favicon.png`
+
+## 构建与发布
+
+提交并推送到 `master` 分支后，GitHub Pages 会按照仓库的 Pages 配置发布网站。
+
+`.github/workflows/jekyll-build.yml` 会在推送和 Pull Request 时执行生产构建，用于提前发现依赖、模板或内容错误。
 
 ## 致谢
 
-* [Jekyll](https://github.com/jekyll/jekyll) - 这是本站存在的根基
-* [Kiko-now](<https://github.com/aweekj/kiko-now>) - 我首先是fork这个主题，然后再其上进行修改汉化，才有了LOFFER
-* [Font Awesome](<https://fontawesome.com/>) - 社交网络图标来自FontAwesome的免费开源内容
+感谢以下开源项目：
 
+- [LOFFER](https://github.com/FromEndWorld/LOFFER)
+- [Jekyll](https://jekyllrb.com/)
+- [jekyll-toc](https://github.com/allejo/jekyll-toc)
+- [Open Color](https://yeun.github.io/open-color/)
 
+## License
 
-## 帮助这个项目
-
-介绍更多人来使用它，摆脱lofter自由飞翔！
-
-欢迎Issues和Pull Requests。
-
-给我点一个☆吧！
-
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/givemefive.png)
+本项目采用 [MIT License](LICENSE)。
