@@ -1,0 +1,12 @@
+{% if page.comments == true and site.comments_provider == "utterances" and site.utterances.repo %}
+<section class="comments" aria-label="评论">
+<script src="https://utteranc.es/client.js"
+        repo="{{ site.utterances.repo }}"
+        issue-term="{{ site.utterances.issue_term | default: 'pathname' }}"
+        label="{{ site.utterances.label | default: 'blog-comments' }}"
+        theme="{{ site.utterances.theme | default: 'github-light' }}"
+        crossorigin="anonymous"
+        async>
+</script>
+</section>
+{% endif %}

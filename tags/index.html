@@ -12,7 +12,7 @@ permalink: /tags/
   <ul class="label">
     {% for tag in site.tags %}
     <li>
-      <a href="#{{ tag[0] }}">
+      <a href="#{{ tag[0] | slugify }}">
         <span>{{ tag[0] }}</span>
         <span class="count">{{ tag[1] | size }}</span>
       </a>
@@ -21,7 +21,7 @@ permalink: /tags/
   </ul>
 
   {% for tag in site.tags %}
-    <h2 id="{{ tag[0] }}">
+    <h2 id="{{ tag[0] | slugify }}">
       {{ tag[0] }}
     </h2>
     <ul class="tag">
@@ -31,7 +31,7 @@ permalink: /tags/
             {% if post.link %}
               <a href="{{ post.link }}">
             {% else %}
-              <a href="{{ site.baseurl }}{{ post.url }}">
+              <a href="{{ post.url | relative_url }}">
             {% endif %}
                 {{ post.title }}
               </a>

@@ -6,28 +6,26 @@
 # 注意，“name: LOFFER”，冒号后面的空格不可以省略。
 # 井号后面的文字是说明文档，不会被程序读取。
 
-# 描述/签名
+# 站点信息
+title: AlieZVzz
 name: AlieZVzz
 description: Optimizing life with stochastic gradient descent
-
-# 输入你的网站域名（如果你没有添加自己的域名，而是直接用GitHub pages分配的域名的话可以省略）
-url: 
-
-# 添加你的博客的二级域名，一般来说是你的repository名
-# 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
-# 那么就写成 "/repository-name"
-baseurl: /
+url: https://aliezvzz.github.io
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+author:
+  name: AlieZVzz
+  url: https://github.com/AlieZVzz
 
 
 #
 # 下面的设定都是可选的
 #
 
-# 你的博客logo图片URL，建议尺寸不超过300px × 300px
-avatar: https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/logo.png
-
-# 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
-favicon: https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/favicon.png
+# 使用仓库内资源，避免依赖主题作者的远程文件
+avatar: /images/logo.png
+favicon: /images/favicon.png
 
 
 # 菜单中的按钮
@@ -65,29 +63,16 @@ footer-links:
   twitter: # https://www.twitter.com/<your_twitter_username> 
   youtube: # channel/<your_long_string> or user/<user-name>
 
-# 站点页脚的文字
-footer-text: Copyright (c) 2023
-
-#
-# 评论，注意，请不要同时添加多种不同的评论区
-#
-
-# 输入Disqus shortname，即可添加评论区，请查阅文档，设置自己的disqus站点，不要继续使用我的站点loffer
-disqus: loffer #shortname
-
-# 输入Gitalk相关设定，即可添加评论区，具体请看教程
-gitalk:
-  clientID: 
-  clientSecret: 
-  repo: 
-  owner: 
-  proxy:
+# 评论只使用 Utterances，并且仅在文章设置 comments: true 时加载
+comments_provider: utterances
+utterances:
+  repo: AlieZVzz/aliezvzz.github.io
+  issue_term: pathname
+  label: blog-comments
+  theme: github-light
 
 # 输入Google Analytics web tracking code
 google_analytics:
-
-utteranc:
-  repo: # Your github repo path, also see: https://utteranc.es
 
 #
 # !! 以下所有设置都不需要更改 !!
@@ -118,6 +103,7 @@ plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-paginate
+  - jekyll-seo-tag
 
 # Exclude these files from your production _site
 exclude:
@@ -125,5 +111,3 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
-  - CNAME
-

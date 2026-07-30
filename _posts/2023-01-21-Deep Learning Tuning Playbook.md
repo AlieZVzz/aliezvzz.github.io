@@ -6,6 +6,7 @@ Author: aliezvzz
 categories: 
 tags: [deep learning]
 comments: true
+math: true
 --- 
 *搬运至：https://github.com/google-research/tuning_playbook*
 

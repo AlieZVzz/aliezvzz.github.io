@@ -8,7 +8,7 @@ permalink: /archive/
   <h2>No post found</h2>
 {% endif %}
 
-<ul class="archive">
+<div class="archive">
   {% for post in site.posts %}
     {% unless post.next %}
       <h2>{{ post.date | date: '%Y' }}</h2>
@@ -20,15 +20,15 @@ permalink: /archive/
       {% endif %}
     {% endunless %}
 
-    <li>
+    <p class="archive-item">
       {% if post.link %}
       <a href="{{ post.link }}">
       {% else %}
-      <a href="{{ site.baseurl }}{{ post.url }}">
+      <a href="{{ post.url | relative_url }}">
       {% endif %}
         {{ post.title }}
       </a>
       <time>{{ post.date | date: "%Y-%m-%d" }}</time>
-    </li>
+    </p>
   {% endfor %}
-</ul>
+</div>
