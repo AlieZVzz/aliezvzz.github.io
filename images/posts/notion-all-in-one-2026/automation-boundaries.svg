@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">程序、AI Agent 与人的职责边界</title>
+  <desc id="desc">程序处理确定性同步，AI Agent 负责语义判断，人负责目标、意义和最终决定，三者围绕 Notion 中的共享状态协作。</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#5279A9"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#42816C"/>
+    </marker>
+    <marker id="arrow-coral" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#B96845"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FAF8F3"/>
+
+  <text x="100" y="100" fill="#263548" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="39" font-weight="720">同一套状态，不同的职责</text>
+  <text x="100" y="142" fill="#758092" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="20">机器减少维护成本，人保留目标、意义与最终决定</text>
+  <path d="M100 174H1500" stroke="#E4DFD5" stroke-width="2"/>
+
+  <path d="M510 438H648" stroke="#5279A9" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+  <path d="M1090 438H952" stroke="#42816C" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+  <path d="M800 652V574" stroke="#B96845" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-coral)"/>
+
+  <g>
+    <circle cx="360" cy="438" r="128" fill="#EDF3FA" stroke="#5279A9" stroke-width="3"/>
+    <rect x="310" y="358" width="100" height="76" rx="20" fill="#FFFFFF" stroke="#5279A9" stroke-width="4"/>
+    <circle cx="340" cy="396" r="12" fill="none" stroke="#5279A9" stroke-width="4"/>
+    <circle cx="380" cy="396" r="12" fill="none" stroke="#5279A9" stroke-width="4"/>
+    <path d="M340 378V366M340 426V414M322 396H310M370 396H352M380 378V366M380 426V414M398 396H410" stroke="#5279A9" stroke-width="4" stroke-linecap="round"/>
+    <text x="360" y="478" text-anchor="middle" fill="#2F5A8C" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="27" font-weight="720">普通程序</text>
+    <text x="360" y="510" text-anchor="middle" fill="#5A718D" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="17">确定性同步</text>
+  </g>
+
+  <g>
+    <circle cx="800" cy="438" r="146" fill="#304F78"/>
+    <ellipse cx="800" cy="392" rx="76" ry="26" fill="#466A96"/>
+    <path d="M724 392V471C724 486 758 498 800 498C842 498 876 486 876 471V392" fill="#3B5D88"/>
+    <path d="M724 430C724 445 758 457 800 457C842 457 876 445 876 430" fill="none" stroke="#7894B5" stroke-width="3"/>
+    <path d="M724 468C724 483 758 495 800 495C842 495 876 483 876 468" fill="none" stroke="#7894B5" stroke-width="3"/>
+    <circle cx="770" cy="392" r="6" fill="#DCE8F6"/>
+    <circle cx="800" cy="392" r="6" fill="#DCE8F6"/>
+    <circle cx="830" cy="392" r="6" fill="#DCE8F6"/>
+    <text x="800" y="532" text-anchor="middle" fill="#FFFFFF" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="29" font-weight="720">共享状态</text>
+    <text x="800" y="563" text-anchor="middle" fill="#D5E1EF" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="16">Notion · 可信状态中枢</text>
+  </g>
+
+  <g>
+    <circle cx="1240" cy="438" r="128" fill="#ECF6F1" stroke="#42816C" stroke-width="3"/>
+    <circle cx="1240" cy="390" r="40" fill="#FFFFFF" stroke="#42816C" stroke-width="4"/>
+    <circle cx="1226" cy="386" r="5" fill="#42816C"/>
+    <circle cx="1254" cy="386" r="5" fill="#42816C"/>
+    <path d="M1224 405C1234 414 1246 414 1256 405" fill="none" stroke="#42816C" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="1189" cy="366" r="7" fill="#72A18F"/>
+    <circle cx="1291" cy="366" r="7" fill="#72A18F"/>
+    <circle cx="1240" cy="326" r="7" fill="#72A18F"/>
+    <path d="M1195 370L1208 378M1285 370L1272 378M1240 333V350" stroke="#72A18F" stroke-width="3" stroke-linecap="round"/>
+    <text x="1240" y="478" text-anchor="middle" fill="#286A54" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="27" font-weight="720">AI Agent</text>
+    <text x="1240" y="510" text-anchor="middle" fill="#527467" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="17">语义判断</text>
+  </g>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="360" y="622" text-anchor="middle" fill="#718095" font-size="16">RSS · 去重 · 固定字段</text>
+    <text x="1240" y="622" text-anchor="middle" fill="#718095" font-size="16">归纳 · 关联 · 复盘</text>
+  </g>
+
+  <g>
+    <circle cx="800" cy="738" r="72" fill="#FFF0E6" stroke="#B96845" stroke-width="3"/>
+    <circle cx="800" cy="718" r="21" fill="#E2A386"/>
+    <path d="M761 766C770 735 830 735 839 766" fill="#E2A386"/>
+    <circle cx="800" cy="738" r="88" fill="none" stroke="#EBC4B1" stroke-width="2" stroke-dasharray="5 9"/>
+  </g>
+  <text x="910" y="718" fill="#97502F" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="24" font-weight="720">我</text>
+  <text x="910" y="752" fill="#6D6870" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="18">目标 · 情绪 · 意义 · 最终决定</text>
+  <text x="910" y="782" fill="#9A8D86" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="15">系统可以提供反馈，但不能替我定义价值</text>
+
+  <text x="100" y="820" fill="#9AA3AF" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="15">边界先于自动化</text>
+</svg>

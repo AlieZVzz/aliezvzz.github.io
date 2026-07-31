@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Resource、Progress 与 Area 的信息流</title>
+  <desc id="desc">外部信息由 Resource 接住，在 Progress 中转化为行动，最后在 Area 中沉淀为可复用的个人知识。</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#5279A9"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1L11 6L1 11Z" fill="#42816C"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FAF8F3"/>
+
+  <text x="100" y="100" fill="#263548" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="39" font-weight="720">从输入到产出</text>
+  <text x="100" y="142" fill="#758092" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="20">内容不必放在一起，但需要沿着同一条关系流动</text>
+  <path d="M100 174H1500" stroke="#E4DFD5" stroke-width="2"/>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="78" y="292" width="132" height="44" rx="22" fill="#FFFFFF" stroke="#CDD9E8" stroke-width="2"/>
+    <rect x="110" y="362" width="132" height="44" rx="22" fill="#FFFFFF" stroke="#CDD9E8" stroke-width="2"/>
+    <rect x="78" y="432" width="132" height="44" rx="22" fill="#FFFFFF" stroke="#CDD9E8" stroke-width="2"/>
+    <rect x="110" y="502" width="132" height="44" rx="22" fill="#FFFFFF" stroke="#CDD9E8" stroke-width="2"/>
+    <text x="144" y="321" text-anchor="middle" fill="#59718F" font-size="17">阅读</text>
+    <text x="176" y="391" text-anchor="middle" fill="#59718F" font-size="17">剪藏</text>
+    <text x="144" y="461" text-anchor="middle" fill="#59718F" font-size="17">对话</text>
+    <text x="176" y="531" text-anchor="middle" fill="#59718F" font-size="17">文献</text>
+    <text x="78" y="576" fill="#9AA3AF" font-size="15">外部输入</text>
+  </g>
+
+  <g fill="none" stroke="#B8C8DC" stroke-width="2.5" stroke-linecap="round">
+    <path d="M210 314C264 314 268 350 316 365"/>
+    <path d="M242 384C276 384 284 390 316 398"/>
+    <path d="M210 454C264 454 272 442 316 431"/>
+    <path d="M242 524C282 524 286 474 322 450"/>
+  </g>
+
+  <path d="M546 412H664" stroke="#5279A9" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+  <path d="M936 412H1054" stroke="#42816C" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+  <text x="605" y="384" text-anchor="middle" fill="#5279A9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="16" font-weight="620">转化</text>
+  <text x="995" y="384" text-anchor="middle" fill="#42816C" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="16" font-weight="620">沉淀</text>
+
+  <g>
+    <circle cx="420" cy="412" r="126" fill="#EDF3FA" stroke="#5279A9" stroke-width="3"/>
+    <path d="M368 366H472L493 437H347Z" fill="#FFFFFF" stroke="#5279A9" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M348 437H493L469 468H372Z" fill="#DDE8F5" stroke="#5279A9" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M386 343V395M386 395L369 378M386 395L403 378" fill="none" stroke="#5279A9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="451" cy="370" r="7" fill="#7D9BC0"/>
+    <circle cx="451" cy="395" r="7" fill="#7D9BC0"/>
+  </g>
+
+  <g>
+    <circle cx="800" cy="412" r="126" fill="#ECF6F1" stroke="#42816C" stroke-width="3"/>
+    <circle cx="800" cy="412" r="62" fill="#FFFFFF" stroke="#42816C" stroke-width="4"/>
+    <path d="M775 411L792 428L828 389" fill="none" stroke="#42816C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="800" cy="328" r="8" fill="#42816C"/>
+    <circle cx="728" cy="453" r="8" fill="#72A18F"/>
+    <circle cx="872" cy="453" r="8" fill="#72A18F"/>
+    <path d="M800 336C845 338 876 371 878 414M867 465C845 497 802 508 766 491M733 443C717 404 733 362 768 343" fill="none" stroke="#72A18F" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <circle cx="1180" cy="412" r="126" fill="#FFF0E6" stroke="#B96845" stroke-width="3"/>
+    <path d="M1180 472V382M1180 410L1136 372M1180 428L1224 385M1180 449L1134 428" fill="none" stroke="#B96845" stroke-width="5" stroke-linecap="round"/>
+    <g fill="#FFFFFF" stroke="#B96845" stroke-width="3">
+      <rect x="1098" y="337" width="78" height="50" rx="8" transform="rotate(-6 1137 362)"/>
+      <rect x="1208" y="350" width="78" height="50" rx="8" transform="rotate(6 1247 375)"/>
+      <rect x="1088" y="407" width="78" height="50" rx="8" transform="rotate(4 1127 432)"/>
+    </g>
+    <path d="M1117 357H1155M1228 371H1266M1107 429H1145" stroke="#D69A7F" stroke-width="4" stroke-linecap="round"/>
+    <path d="M1148 475H1212" stroke="#B96845" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" text-anchor="middle">
+    <text x="420" y="586" fill="#2F5A8C" font-size="30" font-weight="720">Resource</text>
+    <text x="420" y="622" fill="#536A84" font-size="19">接住外部信息</text>
+    <text x="420" y="654" fill="#8A96A5" font-size="16">保留来源 · 等待使用</text>
+
+    <text x="800" y="586" fill="#286A54" font-size="30" font-weight="720">Progress</text>
+    <text x="800" y="622" fill="#4E7165" font-size="19">组织真实行动</text>
+    <text x="800" y="654" fill="#8A96A5" font-size="16">Project · Task · Daily Log</text>
+
+    <text x="1180" y="586" fill="#97502F" font-size="30" font-weight="720">Area</text>
+    <text x="1180" y="622" fill="#815E4E" font-size="19">沉淀个人知识</text>
+    <text x="1180" y="654" fill="#8A96A5" font-size="16">可复用 · 可追溯</text>
+  </g>
+
+  <path d="M298 730H1302" stroke="#DED8CE" stroke-width="2"/>
+  <circle cx="420" cy="730" r="6" fill="#5279A9"/>
+  <circle cx="800" cy="730" r="6" fill="#42816C"/>
+  <circle cx="1180" cy="730" r="6" fill="#B96845"/>
+  <text x="800" y="786" text-anchor="middle" fill="#48576A" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="600">Resource 提供材料 · Progress 推动行动 · Area 留下成果</text>
+</svg>
