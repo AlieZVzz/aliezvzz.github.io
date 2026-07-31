@@ -28,6 +28,10 @@ mermaid: true
 
 <!-- more -->
 
+![Electronic Journey 今日概览](/images/posts/electronic-journey/today.jpg)
+
+*Electronic Journey 的今日概览：记录状态、当天截图数量、本地空间和记录前检查集中在同一个页面。*
+
 ## 最终效果
 
 整套流程每天自动完成以下工作：
@@ -67,6 +71,10 @@ Electronic Journey 的桌面端使用 Tauri 2、Rust、React、TypeScript 和 SQ
 - 动态托盘控制；
 - 个人 SFTP 配置、上传队列和手动选择界面。
 
+![Electronic Journey 本地时间线](/images/posts/electronic-journey/timeline.jpg)
+
+*本地时间线使用缩略图快速浏览截图，也可以逐张勾选需要上传的原图。*
+
 Windows 端已经接入同一套 Rust 状态机，但屏幕捕获、系统事件和托盘行为仍需要真机验收。
 
 从一开始，我就给采集端划定了几条边界：
@@ -78,6 +86,10 @@ Windows 端已经接入同一套 Rust 状态机，但屏幕捕获、系统事件
 - 不建设自己的图片云、对象存储或 LLM 图片中转服务；
 - 只有用户明确配置并开启后，图片才会上传到用户自己的 SFTP 目录；
 - 客户端不知道远端使用什么模型、Prompt 或 Agent。
+
+![Electronic Journey 隐私中心](/images/posts/electronic-journey/privacy.jpg)
+
+*隐私中心允许调整截图间隔和空闲暂停策略，原图仍按捕获分辨率保存在本机。*
 
 这种解耦很重要。Electronic Journey 只负责在授权范围内产生和管理个人数据，不与某个 AI 服务强绑定。以后即使替换模型、Notion 或调度系统，采集端也不需要重写。
 
