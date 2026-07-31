@@ -29,6 +29,10 @@ mermaid: true
 
 <!-- more -->
 
+![Movie Tracking 的 Gallery 电影库视图](/images/posts/douban-notion-movie-workflow/database.jpg)
+
+*Movie Tracking 的 Gallery 视图：海报卡片按网格排列，一屏可以同时看到多部电影，也可以切换到表格、日历和图表。*
+
 ## 第一版：先解决历史数据，再考虑自动化
 
 最开始面对的问题不是“下一部电影怎么同步”，而是豆瓣账号中已经积累了很多历史记录。
@@ -153,9 +157,17 @@ RSS 只解决了“发生了什么”，还不足以构成我想要的电影库�
 - `导演`：多选；
 - `封面`：外部图片。
 
+![Movie Tracking 中的一条电影记录](/images/posts/douban-notion-movie-workflow/detail.jpg)
+
+*一条同步后的电影记录：标题、类型、导演、评分、观看日期、短评和豆瓣链接被放在同一页中。*
+
 我把这些字段直接映射为 Notion API 的属性结构。类型和导演使用 `multi_select`，评分使用 `select`，观看时间使用 `date`。这样写入之后，不需要再次整理，就可以直接在 Notion 中按导演、类型、年份或评分创建视图。
 
 这也是我喜欢把数据最终放进 Notion 的原因：同步程序只负责生产结构化记录，如何浏览和组织则继续交给 Notion。
+
+![Movie Tracking 的结构化表格视图](/images/posts/douban-notion-movie-workflow/table.jpg)
+
+*表格视图把同步结果展开成可筛选的字段，适合检查日期、导演、类型和评分是否完整。*
 
 ## 海报为什么需要单独设计回退链路
 

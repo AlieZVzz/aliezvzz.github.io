@@ -635,7 +635,11 @@ nav {
   }
 }
 
-@media screen and (max-width:2200px) and (min-width:1200px){
+// Reserve the space occupied by the fixed table of contents on every
+// desktop width where the sidebar and TOC are visible. The old rule only
+// covered 1200–2200px, so a narrower browser window showed the TOC on top of
+// the article content.
+@media screen and (min-width: 961px) {
   .withtoc{
     padding-left: 260px;
   }

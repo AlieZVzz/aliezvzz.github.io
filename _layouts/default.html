@@ -11,19 +11,13 @@
       </aside>
     {% endif %}
 
-    <main id="main" class="wrapper-content">
+    <main id="main" class="wrapper-content{% if page.toc == true %} withtoc{% endif %}">
       <div class="container">
         {{ content }}
       </div>
     </main>
 
     {% include analytics.html %}
-
-    {% if page.toc==true %}
-    <script>
-      document.getElementById("main").classList.add("withtoc");
-    </script>
-    {% endif %}
 
     <div class="wrapper-footer-mobile">
       <footer class="footer">
