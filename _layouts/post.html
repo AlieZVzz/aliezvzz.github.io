@@ -2,39 +2,37 @@
 layout: default
 ---
 
-<article class="posts">
-  <h1>{{ page.title }}</h1>
+<article class="posts article">
+  <header class="article-header">
+    <h1>{{ page.title }}</h1>
 
-  {% if page.description %}
-    <p class="post-dek">{{ page.description }}</p>
-  {% endif %}
-
-  <div class="meta">
-    <span class="author">
-      {{ page.author | default: page.Author | default: site.author.name }}
-    </span>
-
-    <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
-      {{ page.date | date: "%Y-%m-%d" }}
-    </time>
-
-    <nav class="tag" aria-label="文章主题">
-      {% for tag in page.tags %}
-      <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
-      {% endfor %}
-    </nav>
-
-    {% if page.topics and page.topics.size > 0 %}
-      <details class="more-tags">
-        <summary>更多主题</summary>
-        <span class="tag" aria-label="更多主题">
-          {% for topic in page.topics %}
-            <span>{{ topic }}</span>
-          {% endfor %}
-        </span>
-      </details>
+    {% if page.description %}
+      <p class="post-dek">{{ page.description }}</p>
     {% endif %}
-  </div>
+
+    <div class="meta">
+      <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%Y-%m-%d" }}
+      </time>
+
+      <nav class="tag" aria-label="文章主题">
+        {% for tag in page.tags %}
+        <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
+        {% endfor %}
+      </nav>
+
+      {% if page.topics and page.topics.size > 0 %}
+        <details class="more-tags">
+          <summary>更多主题</summary>
+          <span class="tag" aria-label="更多主题">
+            {% for topic in page.topics %}
+              <span>{{ topic }}</span>
+            {% endfor %}
+          </span>
+        </details>
+      {% endif %}
+    </div>
+  </header>
 
   <div class="entry">
     {{ content }}

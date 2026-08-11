@@ -9,6 +9,7 @@ layout: default
 <div class="home">
   {% if paginator.page == 1 and paginator.posts.first %}
     {% assign featured_post = paginator.posts.first %}
+    {% assign featured_summary = featured_post.description | default: featured_post.excerpt | strip_html | strip_newlines | truncate: 160 %}
     <article class="featured-post">
       <div class="featured-post-copy">
         <p class="section-label">最新文章</p>
@@ -29,9 +30,7 @@ layout: default
           </nav>
         </div>
 
-        {% if featured_post.description %}
-          <p class="featured-post-summary">{{ featured_post.description }}</p>
-        {% endif %}
+        <p class="featured-post-summary">{{ featured_summary }}</p>
 
         <a class="text-link" href="{{ featured_post.url | relative_url }}">开始阅读 <span aria-hidden="true">→</span></a>
       </div>
@@ -59,7 +58,8 @@ layout: default
             <div class="meta">
               <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
             </div>
-            {% if post.description %}<p class="post-summary">{{ post.description }}</p>{% endif %}
+            {% assign pinned_summary = post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 160 %}
+            <p class="post-summary">{{ pinned_summary }}</p>
             <a class="text-link" href="{{ post.url | relative_url }}">阅读全文 <span aria-hidden="true">→</span></a>
           </article>
         {% endif %}
@@ -83,17 +83,8 @@ layout: default
 
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
 
-            {% if post.description %}
-              <p class="post-summary">{{ post.description }}</p>
-            {% else %}
-              <div class="post-excerpt">
-                {% if post.content contains site.excerpt_separator or post.content != post.excerpt %}
-                  {{ post.excerpt }}
-                {% else %}
-                  {{ post.content | lstrip | split: "\n" | first }}
-                {% endif %}
-              </div>
-            {% endif %}
+            {% assign post_summary = post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 160 %}
+            <p class="post-summary">{{ post_summary }}</p>
 
             <a class="text-link" href="{{ post.url | relative_url }}">阅读全文 <span aria-hidden="true">→</span></a>
           </article>
