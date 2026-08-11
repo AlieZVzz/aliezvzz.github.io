@@ -18,15 +18,22 @@ layout: default
       {{ page.date | date: "%Y-%m-%d" }}
     </time>
 
-    <ul class="tag">
+    <nav class="tag" aria-label="文章主题">
       {% for tag in page.tags %}
-      <li>
-        <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">
-          {{ tag }}
-        </a>
-      </li>
+      <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
       {% endfor %}
-    </ul>
+    </nav>
+
+    {% if page.topics and page.topics.size > 0 %}
+      <details class="more-tags">
+        <summary>更多主题</summary>
+        <span class="tag" aria-label="更多主题">
+          {% for topic in page.topics %}
+            <span>{{ topic }}</span>
+          {% endfor %}
+        </span>
+      </details>
+    {% endif %}
   </div>
 
   <div class="entry">

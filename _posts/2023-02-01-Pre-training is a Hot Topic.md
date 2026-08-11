@@ -4,7 +4,7 @@ title: Pre-training is a Hot Topic
 date: 2023-02-01
 Author: Bianchi
 categories: 
-tags: [Topic Model]
+tags: [自然语言处理, 机器学习]
 comments: False
 --- 
 Bianchi, F., Terragni, S., & Hovy, D. (2021). Pre-training is a Hot Topic: Contextualized Document Embeddings Improve Topic Coherence. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 2: Short Papers), 759–766. https://doi.org/10.18653/v1/2021.acl-short.96

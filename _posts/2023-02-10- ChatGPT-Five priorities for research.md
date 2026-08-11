@@ -4,7 +4,7 @@ title: ChatGPT：Five priorities for research
 date: 2023-02-10
 Author: aliezvzz
 categories: 
-tags: [technology advance]
+tags: [人本 AI, 技术趋势]
 comments: False
 --- 
 van Dis, E. A. M., Bollen, J., Zuidema, W., van Rooij, R., & Bockting, C. L. (2023). ChatGPT: Five priorities for research. Nature, 614(7947), 224–226. https://doi.org/10.1038/d41586-023-00288-7

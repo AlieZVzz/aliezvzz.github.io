@@ -417,7 +417,8 @@ pre {
 
 .site-info {
   text-align:center;
-  width: min(86%, 300px);
+  width: 86%;
+  max-width: 300px;
   margin: 54px auto 0;
 
   @include mobile {
@@ -548,8 +549,8 @@ nav {
 // Home and posts
 
 .home {
-  max-width: 940px;
-  margin: 48px auto 0;
+  max-width: 1020px;
+  margin: 40px 0 0;
 
   @include mobile {
     margin-top: 28px;
@@ -685,32 +686,94 @@ nav {
   font-size: 12px;
   font-weight: 500;
 
-  li:before {
-    content: '';
+  > a,
+  > .tag-more {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 1px 8px;
+    color: $oc-gray-7;
+    background-color: rgba($oc-gray-0, .4);
+    border: 1px solid $oc-gray-3;
+    border-radius: 999px;
   }
 
-  li {
-    display: inline-flex;
-    margin: 0;
+  > a:hover {
+    color: $link-color;
+    background-color: $link-bghv-color;
+    border-color: rgba($link-color, .35);
+  }
 
-    > a,
-    &.tag-more {
+  > .tag-more {
+    color: $base-lighten-color;
+  }
+}
+
+.more-tags {
+  position: relative;
+  margin: 0;
+
+  summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 1px 8px;
+    color: $oc-gray-7;
+    border: 1px solid $oc-gray-3;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: '⌄';
+      margin-left: 4px;
+      color: $base-lighten-color;
+    }
+
+    &:focus-visible {
+      outline: 3px solid rgba($link-color, .28);
+      outline-offset: 3px;
+    }
+  }
+
+  &[open] summary {
+    color: $link-color;
+    background: $link-bghv-color;
+    border-color: rgba($link-color, .35);
+
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  .tag {
+    position: absolute;
+    z-index: 5;
+    top: calc(100% + 7px);
+    left: 0;
+    width: max-content;
+    max-width: 260px;
+    padding: 9px;
+    background: $white;
+    border: 1px solid $divider-color;
+    border-radius: 8px;
+    box-shadow: 0 8px 22px rgba($black, .08);
+
+    > span {
       display: inline-flex;
       align-items: center;
-      min-height: 22px;
-      padding: 1px 6px;
+      min-height: 24px;
+      padding: 1px 8px;
       color: $oc-gray-7;
-      background-color: $tag-index-label-background-color;
-      border-radius: 4px;
-    }
-
-    > a:hover {
-      color: $link-color;
-      background-color: $link-bghv-color;
-    }
-
-    &.tag-more {
-      color: $base-lighten-color;
+      background: $background-color;
+      border: 1px solid $oc-gray-3;
+      border-radius: 999px;
     }
   }
 }
@@ -947,51 +1010,76 @@ nav {
 }
 
 // Tags
+.tags {
+  max-width: 820px;
+}
+
+.tags-intro {
+  max-width: 620px;
+  margin-bottom: 22px;
+  color: $oc-gray-7;
+}
+
 .tags > .label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+
   > li:before {
     content: "";
   }
 
   > li {
+    display: flex;
     margin: 0;
     font-size: $small-font-size;
-    font-weight: 300;
-    display: inline;
+    font-weight: 500;
 
     > a {
-      display: inline-block;
-      margin: 1px;
-      color: $base-color;
-      background-color: $tag-index-label-background-color;
-      border-radius: 3px;
+      display: flex;
+      overflow: hidden;
+      color: $oc-gray-7;
+      background: $white;
+      border: 1px solid $oc-gray-3;
+      border-radius: 999px;
 
       &:hover {
-        background-color: $link-bghv-color;
+        color: $link-color;
+        background: $link-bghv-color;
+        border-color: rgba($link-color, .35);
       }
 
       span {
-        float: left;
-        padding: .5px 5px;
+        padding: 3px 9px;
 
         &.count {
-          background-color: $tag-index-count-background-color;
-          border-radius: 0 3px 3px 0;
-
+          margin-left: 2px;
+          padding-left: 8px;
+          color: $base-lighten-color;
+          border-left: 1px solid $divider-color;
         }
       }
     }
   }
 }
 
+.tags > h2 {
+  margin: 46px 0 10px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid $divider-color;
+}
+
 .tags > .tag {
   a {
     color: $base-color;
   }
+
   time {
-    color: $base-lighten-color;
+    color: $oc-gray-7;
     font-size: $small-font-size;
-    font-weight: 300;
-    margin-left: 3px;
+    font-weight: 500;
+    margin-left: 6px;
   }
 }
 

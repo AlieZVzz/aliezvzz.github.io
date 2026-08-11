@@ -4,7 +4,7 @@ title: Human-Centric Research for NLP-Towards a Definition and Guiding Questions
 date: 2023-03-05
 Author: aliezvzz
 categories: 
-tags: [HCR]
+tags: [人本 AI, 自然语言处理]
 comments: False
 --- 
 Kotnis, B., Gashteovski, K., Gastinger, J., Serra, G., Alesiani, F., Sztyler, T., Shaker, A., Gong, N., Lawrence, C., & Xu, Z. (2022). Human-Centric Research for NLP: Towards a Definition and Guiding Questions (arXiv:2207.04447). arXiv. https://doi.org/10.48550/arXiv.2207.04447

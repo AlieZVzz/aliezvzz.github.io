@@ -4,7 +4,7 @@ title: Deep Learning Tuning Playbook
 date: 2023-01-21
 Author: aliezvzz
 categories: 
-tags: [deep learning]
+tags: [机器学习]
 comments: true
 math: true
 --- 

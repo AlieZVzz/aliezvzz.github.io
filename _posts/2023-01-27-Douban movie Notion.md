@@ -4,7 +4,7 @@ title: Douban movie Notion同步豆瓣电影至notion数据库
 date: 2023-01-27
 Author: aliezvzz
 categories: 
-tags: [notion]
+tags: [个人系统, 自动化]
 comments: true
 --- 
 借助notion提供的api将豆瓣电影中观影记录同步至notion数据库中

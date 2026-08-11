@@ -6,10 +6,12 @@ author: AlieZVzz
 description: "从 CSV 初始化、豆瓣 RSS 增量同步，到 TMDb 海报补全、Notion 去重、Docker 与 cron：我如何把电影记录改造成一条长期运行的个人自动化工作流。"
 cover: /images/posts/douban-notion-movie-workflow/database.jpg
 tags:
+  - 个人系统
+  - 自动化
+topics:
   - Douban
   - Notion
   - Python
-  - Automation
   - Docker
 comments: true
 toc: true

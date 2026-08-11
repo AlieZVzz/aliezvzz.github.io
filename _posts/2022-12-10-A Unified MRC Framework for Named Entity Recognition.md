@@ -4,7 +4,7 @@ title: A Unified MRC Framework for Named Entity Recognition
 date: 2022-12-10
 Author: aliezvzz
 categories: 
-tags: [technology advance]
+tags: [自然语言处理]
 comments: False
 math: true
 --- 

@@ -4,7 +4,7 @@ title: A Survey of Large Language Models
 date: 2023-12-25
 Author: aliezvzz
 categories: 
-tags: [deep learning]
+tags: [机器学习]
 comments: true
 math: true
 --- 

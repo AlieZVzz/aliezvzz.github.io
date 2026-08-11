@@ -4,7 +4,7 @@ title: A Few Topical Tweets are Enough for Effective User Stance Detection
 date: 2023-01-17
 Author: aliezvzz
 categories: 
-tags: [stance detection]
+tags: [自然语言处理]
 comments: true
 math: true
 --- 

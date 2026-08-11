@@ -4,7 +4,7 @@ title: Toward Practices for Human-Centered Machine Learning
 date: 2023-03-10
 Author: aliezvzz
 categories: 
-tags: [HCR]
+tags: [人本 AI, 机器学习]
 comments: False
 --- 
 Chancellor, S. (n.d.). Toward Practices for Human-Centered Machine Learning. Retrieved March 16, 2023, from https://cacm.acm.org/magazines/2023/3/270209-toward-practices-for-human-centered-machine-learning/fulltext

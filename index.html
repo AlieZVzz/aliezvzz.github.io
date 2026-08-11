@@ -19,14 +19,14 @@ layout: default
             {{ featured_post.date | date: "%Y-%m-%d" }}
           </time>
 
-          <ul class="tag" aria-label="文章标签">
-            {% for tag in featured_post.tags limit: 2 %}
-              <li><a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a></li>
+          <nav class="tag" aria-label="文章标签">
+            {% for tag in featured_post.tags limit: 3 %}
+              <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
             {% endfor %}
-            {% if featured_post.tags.size > 2 %}
-              <li class="tag-more">+{{ featured_post.tags.size | minus: 2 }}</li>
+            {% if featured_post.tags.size > 3 %}
+              <span class="tag-more">+{{ featured_post.tags.size | minus: 3 }}</span>
             {% endif %}
-          </ul>
+          </nav>
         </div>
 
         {% if featured_post.description %}
@@ -71,14 +71,14 @@ layout: default
           <article class="post post-card">
             <div class="post-card-meta">
               <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
-              <ul class="tag" aria-label="文章标签">
-                {% for tag in post.tags limit: 2 %}
-                  <li><a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a></li>
+              <nav class="tag" aria-label="文章标签">
+                {% for tag in post.tags limit: 3 %}
+                  <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
                 {% endfor %}
-                {% if post.tags.size > 2 %}
-                  <li class="tag-more">+{{ post.tags.size | minus: 2 }}</li>
+                {% if post.tags.size > 3 %}
+                  <span class="tag-more">+{{ post.tags.size | minus: 3 }}</span>
                 {% endif %}
-              </ul>
+              </nav>
             </div>
 
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>

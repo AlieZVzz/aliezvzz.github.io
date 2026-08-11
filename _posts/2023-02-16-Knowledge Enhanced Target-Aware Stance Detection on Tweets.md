@@ -4,7 +4,7 @@ title: Knowledge Enhanced Target-Aware Stance Detection on Tweets.
 date: 2023-02-16
 Author: aliezvzz
 categories: 
-tags: [stance detection]
+tags: [自然语言处理]
 comments: False
 math: true
 --- 

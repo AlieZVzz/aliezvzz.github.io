@@ -4,7 +4,7 @@ title: Toward human-centered AI-A perspective from human-computer interaction
 date: 2023-03-08
 Author: aliezvzz
 categories: 
-tags: [HCR]
+tags: [人本 AI]
 comments: False
 --- 
 Xu, W. (2019). Toward human-centered AI: A perspective from human-computer interaction. Interactions, 26(4), 42–46. https://doi.org/10.1145/3328485

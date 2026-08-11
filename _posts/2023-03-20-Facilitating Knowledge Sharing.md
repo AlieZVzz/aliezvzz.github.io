@@ -4,7 +4,7 @@ title: Facilitating Knowledge Sharing from Domain Experts to Data Scientists for
 date: 2023-03-20
 Author: aliezvzz
 categories: 
-tags: [HCR]
+tags: [人本 AI, 自然语言处理]
 comments: False
 math: true
 --- 

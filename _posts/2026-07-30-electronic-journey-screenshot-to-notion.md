@@ -6,11 +6,14 @@ author: AlieZVzz
 description: "从定时桌面截图、个人 SFTP 和分批视觉分析，到保守维护 Notion Tasks：一套以实际工作证据为基础的个人数字旅程流水线。"
 cover: /images/posts/electronic-journey/today.jpg
 tags:
+  - 个人系统
+  - AI Agent
+  - 自动化
+topics:
   - Electronic Journey
   - Tauri
   - Rust
   - Notion
-  - AI Agent
   - Personal Productivity
 comments: true
 toc: true

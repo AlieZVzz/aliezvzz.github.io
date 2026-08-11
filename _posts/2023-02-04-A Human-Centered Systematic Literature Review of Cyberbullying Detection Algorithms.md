@@ -4,7 +4,7 @@ title: A Human-Centered Systematic Literature Review of Cyberbullying Detection 
 date: 2023-02-04
 Author: aliezvzz
 categories: 
-tags: [deep learning]
+tags: [人本 AI, 自然语言处理]
 comments: true
 math: true
 --- 
