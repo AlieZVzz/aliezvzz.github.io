@@ -4,6 +4,7 @@ title: "三年后，我的 Notion All in One 变了：从「把一切放进来�
 date: 2026-07-31
 author: AlieZVzz
 description: "从数据库关系到 AI Agent 与自动化工作流：三年后，我如何重新理解 Notion All in One，并把它从内容仓库变成个人系统的状态中枢。"
+cover: /images/posts/notion-all-in-one-2026/hero.webp
 tags:
   - Notion
   - Knowledge Management

@@ -4,6 +4,7 @@ title: "我把豆瓣「看过」变成了一个自动生长的 Notion 电影库"
 date: 2026-07-30
 author: AlieZVzz
 description: "从 CSV 初始化、豆瓣 RSS 增量同步，到 TMDb 海报补全、Notion 去重、Docker 与 cron：我如何把电影记录改造成一条长期运行的个人自动化工作流。"
+cover: /images/posts/douban-notion-movie-workflow/database.jpg
 tags:
   - Douban
   - Notion

@@ -4,6 +4,7 @@ title: "我做了一个「电子旅程」：让桌面截图自动变成 Notion �
 date: 2026-07-30
 author: AlieZVzz
 description: "从定时桌面截图、个人 SFTP 和分批视觉分析，到保守维护 Notion Tasks：一套以实际工作证据为基础的个人数字旅程流水线。"
+cover: /images/posts/electronic-journey/today.jpg
 tags:
   - Electronic Journey
   - Tauri

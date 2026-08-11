@@ -7,7 +7,7 @@
 
     {% if page.toc==true %}
       <aside class="toc">
-        {% include toc.html html=content %}
+        {% include toc.html html=content h_min=2 h_max=3 %}
       </aside>
     {% endif %}
 
@@ -16,6 +16,44 @@
         {{ content }}
       </div>
     </main>
+
+    {% if page.toc == true %}
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var toc = document.querySelector('.toc');
+          if (!toc || !('IntersectionObserver' in window)) return;
+
+          var links = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+          var entries = links.map(function (link) {
+            var id = decodeURIComponent(link.getAttribute('href').slice(1));
+            return { heading: document.getElementById(id), link: link };
+          }).filter(function (entry) {
+            return entry.heading;
+          });
+
+          function setCurrent(heading) {
+            entries.forEach(function (entry) {
+              var current = entry.heading === heading;
+              entry.link.classList.toggle('is-current', current);
+              if (current) {
+                entry.link.setAttribute('aria-current', 'location');
+              } else {
+                entry.link.removeAttribute('aria-current');
+              }
+            });
+          }
+
+          var observer = new IntersectionObserver(function (observations) {
+            observations.forEach(function (observation) {
+              if (observation.isIntersecting) setCurrent(observation.target);
+            });
+          }, { rootMargin: '-18% 0px -72% 0px', threshold: 0 });
+
+          entries.forEach(function (entry) { observer.observe(entry.heading); });
+          if (entries.length) setCurrent(entries[0].heading);
+        });
+      </script>
+    {% endif %}
 
     {% include analytics.html %}
 

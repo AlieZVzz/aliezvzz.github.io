@@ -3,107 +3,115 @@ layout: default
 ---
 
 {% if site.posts.size == 0 %}
-  <h2>No post found</h2>
+  <h2>暂时还没有文章</h2>
 {% endif %}
 
-<div class="posts">
-  
-  {% for post in site.posts %}
-    {% if post.pinned==true %}
-      <article class="post pinned">
-        <h2>
-          <span class="pin" aria-label="置顶">◆</span>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
+<div class="home">
+  {% if paginator.page == 1 and paginator.posts.first %}
+    {% assign featured_post = paginator.posts.first %}
+    <article class="featured-post">
+      <div class="featured-post-copy">
+        <p class="section-label">最新文章</p>
+        <h2><a href="{{ featured_post.url | relative_url }}">{{ featured_post.title }}</a></h2>
 
         <div class="meta">
-          
-          <span class="author">
-            {{ post.author | default: post.Author | default: site.author.name }}
-          </span>
+          <time class="date" datetime="{{ featured_post.date | date_to_xmlschema }}">
+            {{ featured_post.date | date: "%Y-%m-%d" }}
+          </time>
 
-          <span class="date">
-            {{ post.date | date: "%Y-%m-%d" }}
-          </span>
-
-          <ul class="tag">
-            {% for tag in post.tags %}
-            <li>
-              <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">
-                {{ tag }}
-              </a>
-            </li>
+          <ul class="tag" aria-label="文章标签">
+            {% for tag in featured_post.tags limit: 2 %}
+              <li><a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a></li>
             {% endfor %}
+            {% if featured_post.tags.size > 2 %}
+              <li class="tag-more">+{{ featured_post.tags.size | minus: 2 }}</li>
+            {% endif %}
           </ul>
-
         </div>
 
-       <div class="post-excerpt">
-          {%   if post.content contains site.excerpt_separator or post.content != post.excerpt %}{{ post.excerpt }}
-          {%   else %}{{ post.content | lstrip | split: "
-" | first }}{% endif %}
-          <p>
-        <a class="post-link" href="{{ post.url | relative_url }}">阅读全文</a>
-          </p>
-        </div>
-    </article>
-    {% endif %}
-  {% endfor %}
-  
-  {% for post in paginator.posts %}
-    {% unless post.pinned %}
-    <article class="post">
-      <h2>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h2>
+        {% if featured_post.description %}
+          <p class="featured-post-summary">{{ featured_post.description }}</p>
+        {% endif %}
 
-      <div class="meta">
-        
-        <span class="author">
-          {{ post.author | default: post.Author | default: site.author.name }}
-        </span>
-            
-        <span class="date">
-          {{ post.date | date: "%Y-%m-%d" }}
-        </span>
-
-        <ul class="tag">
-          {% for tag in post.tags %}
-          <li>
-              <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">
-              {{ tag }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
+        <a class="text-link" href="{{ featured_post.url | relative_url }}">开始阅读 <span aria-hidden="true">→</span></a>
       </div>
 
-      <div class="post-excerpt">
-          {%   if post.content contains site.excerpt_separator or post.content != post.excerpt %}{{ post.excerpt }}
-          {%   else %}{{ post.content | lstrip | split: "
-" | first }}{% endif %}
-          <p>
-            <a class="post-link" href="{{ post.url | relative_url }}">阅读全文</a>
-          </p>
-        </div>
-    </article>  
-    {% endunless %}
-  {% endfor %}
-</div>
+      {% if featured_post.cover %}
+        <a class="featured-post-image" href="{{ featured_post.url | relative_url }}" aria-label="阅读：{{ featured_post.title }}">
+          <img src="{{ featured_post.cover | relative_url }}" alt="{{ featured_post.title }} 的封面图" width="720" height="480" fetchpriority="high">
+        </a>
+      {% endif %}
+    </article>
+  {% endif %}
 
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <span class="prev">
-      <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">
-        ← 上一页
-      </a>
-    </span>
-  {% endif %}
-  {% if paginator.next_page %}
-    <span class="next">
-      <a href="{{ paginator.next_page_path | relative_url }}" class="next">
-        下一页 →
-      </a>
-    </span>
-  {% endif %}
+  <section class="post-feed" aria-labelledby="recent-posts">
+    <div class="section-heading">
+      <p id="recent-posts" class="section-label">最近更新</p>
+      <a href="{{ '/archive/' | relative_url }}">全部文章 <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="posts">
+      {% for post in site.posts %}
+        {% if post.pinned == true %}
+          <article class="post post-card pinned">
+            <p class="post-eyebrow"><span class="pin" aria-hidden="true">◆</span>置顶文章</p>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <div class="meta">
+              <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+            </div>
+            {% if post.description %}<p class="post-summary">{{ post.description }}</p>{% endif %}
+            <a class="text-link" href="{{ post.url | relative_url }}">阅读全文 <span aria-hidden="true">→</span></a>
+          </article>
+        {% endif %}
+      {% endfor %}
+
+      {% for post in paginator.posts %}
+        {% if paginator.page == 1 and forloop.first %}{% continue %}{% endif %}
+        {% unless post.pinned %}
+          <article class="post post-card">
+            <div class="post-card-meta">
+              <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+              <ul class="tag" aria-label="文章标签">
+                {% for tag in post.tags limit: 2 %}
+                  <li><a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a></li>
+                {% endfor %}
+                {% if post.tags.size > 2 %}
+                  <li class="tag-more">+{{ post.tags.size | minus: 2 }}</li>
+                {% endif %}
+              </ul>
+            </div>
+
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+
+            {% if post.description %}
+              <p class="post-summary">{{ post.description }}</p>
+            {% else %}
+              <div class="post-excerpt">
+                {% if post.content contains site.excerpt_separator or post.content != post.excerpt %}
+                  {{ post.excerpt }}
+                {% else %}
+                  {{ post.content | lstrip | split: "\n" | first }}
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <a class="text-link" href="{{ post.url | relative_url }}">阅读全文 <span aria-hidden="true">→</span></a>
+          </article>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <span class="prev">
+        <a href="{{ paginator.previous_page_path | relative_url }}">← 上一页</a>
+      </span>
+    {% endif %}
+    {% if paginator.next_page %}
+      <span class="next">
+        <a href="{{ paginator.next_page_path | relative_url }}">下一页 →</a>
+      </span>
+    {% endif %}
+  </div>
 </div>

@@ -11,17 +11,25 @@
       {% else %}
         <p class="site-name"><a href="{{ '/' | relative_url }}">{{ site.name }}</a></p>
       {% endif %}
-      <p class="site-description">{{ site.description }}</p>
+      <p class="site-description">{{ site.profile | default: site.description }}</p>
+      {% if site.profile_focus %}
+        <p class="site-focus">{{ site.profile_focus }}</p>
+      {% endif %}
     </div>
   </header>
 
   <div class="navlist">
-    <nav>
+    <nav aria-label="主导航">
       {% for nav in site.navigation %}
       {% if nav.url contains 'http://' or nav.url contains 'https://' %}
       <a href="{{ nav.url }}">{{ nav.name }}</a>
       {% else %}
-      <a href="{{ nav.url | relative_url }}">{{ nav.name }}</a>
+      {% assign nav_path = nav.url | append: '/' %}
+      {% assign is_current = false %}
+      {% if page.url == nav.url or page.url == nav_path %}
+        {% assign is_current = true %}
+      {% endif %}
+      <a href="{{ nav.url | relative_url }}"{% if is_current %} class="is-active" aria-current="page"{% endif %}>{{ nav.name }}</a>
       {% endif %}
       {% endfor %}
     </nav>
