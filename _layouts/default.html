@@ -15,6 +15,11 @@
 
     <main id="main" class="wrapper-content{% if page.layout == "post" %} article-layout{% endif %}{% if page.toc == true %} withtoc{% endif %}">
       <div class="container">
+        {% if page.layout == "post" %}
+          <nav class="article-nav" aria-label="文章导航">
+            <a class="article-home" href="{{ '/' | relative_url }}"><span aria-hidden="true">←</span> 返回首页</a>
+          </nav>
+        {% endif %}
         {{ content }}
       </div>
     </main>
