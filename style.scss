@@ -546,6 +546,20 @@ nav {
   }
 }
 
+// Article pages use the full viewport instead of the profile sidebar.
+.wrapper-content.article-layout {
+  float: none;
+  width: 100%;
+
+  &.withtoc {
+    padding-left: 0;
+  }
+
+  .container {
+    max-width: 960px;
+  }
+}
+
 // Home and posts
 
 .home {
@@ -990,6 +1004,19 @@ nav {
   }
 }
 
+.toc.article-toc {
+  width: 200px;
+  left: calc(50% - 700px);
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+@media screen and (max-width: 1439px) {
+  .toc.article-toc {
+    display: none;
+  }
+}
+
 // pagination
 
 .pagination {
@@ -1154,6 +1181,13 @@ nav {
     border-top: 1px solid $footer-border-color;
     background-color: $footer-background-color;
   }
+}
+
+.wrapper-footer-article {
+  display: block;
+  width: 100%;
+  border-top: 1px solid $footer-border-color;
+  background-color: $footer-background-color;
 }
 
 footer {

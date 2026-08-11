@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'zh-CN' }}">
-  {% include head.html %}
+    {% include head.html %}
   <body>
     <a class="skip-link" href="#main">跳到正文</a>
-    {% include nav.html %}
+    {% unless page.layout == "post" %}
+      {% include nav.html %}
+    {% endunless %}
 
     {% if page.toc==true %}
-      <aside class="toc">
+      <aside class="toc{% if page.layout == "post" %} article-toc{% endif %}">
         {% include toc.html html=content h_min=2 h_max=3 %}
       </aside>
     {% endif %}
 
-    <main id="main" class="wrapper-content{% if page.toc == true %} withtoc{% endif %}">
+    <main id="main" class="wrapper-content{% if page.layout == "post" %} article-layout{% endif %}{% if page.toc == true %} withtoc{% endif %}">
       <div class="container">
         {{ content }}
       </div>
@@ -57,7 +59,7 @@
 
     {% include analytics.html %}
 
-    <div class="wrapper-footer-mobile">
+    <div class="wrapper-footer-mobile{% if page.layout == "post" %} wrapper-footer-article{% endif %}">
       <footer class="footer">
         {% include footer.html %}
       </footer>
